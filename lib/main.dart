@@ -33,7 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
       // Menghandle peristiwa yang diterima dari Swift
 
       setState(() {
-        dataEvent = data.toString();
+        dataEvent += data.toString();
       });
     });
   }
@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Event Channel Example'),
       ),
       body: Center(
-        child: Text("Data dari Native : $dataEvent"),
+        child: Text("Data dari Obj-C ke Swift ke Dart : $dataEvent"),
       ),
     );
   }

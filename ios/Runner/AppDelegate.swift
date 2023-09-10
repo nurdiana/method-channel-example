@@ -20,6 +20,7 @@ import Flutter
     eventChannel.setStreamHandler(MyEventStreamHandler())
 
     GeneratedPluginRegistrant.register(with: self)
+    GuardCallback.startLooping()
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }
@@ -33,6 +34,9 @@ class MyEventStreamHandler: NSObject, FlutterStreamHandler {
     func onListen(withArguments arguments: Any?, eventSink events: @escaping FlutterEventSink) -> FlutterError? {
         self.eventSink = events
         sendEvent(data:"Hello")
+        sendEvent(data:" Hai")
+
+        sendEvent(data:" Huu")
         return nil
     }
     
@@ -46,3 +50,11 @@ class MyEventStreamHandler: NSObject, FlutterStreamHandler {
         eventSink?(data)
     }
 }
+
+// @objc class ViewController: UIViewController {
+//   // Swift
+//   @objc func receiveFromObjectiveC(_ message: String) {
+//       // Lakukan sesuatu dengan data yang diterima
+//       print("Received from Objective-C: \(message)")
+//   }
+// }
